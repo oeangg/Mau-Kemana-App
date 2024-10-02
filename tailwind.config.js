@@ -7,9 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["var(--font-inter)"],
+        inter: ["var(--font-poppins)"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--bg1)",
+        foreground: "var(--fg1)",
       },
     },
   },
