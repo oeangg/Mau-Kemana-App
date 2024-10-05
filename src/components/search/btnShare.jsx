@@ -1,10 +1,10 @@
 export function BtnShare() {
   return (
-    <button className=" text-indigo-600 bg-indigo-100 border-2 border-indigo-600 absolute top-0 right-0 mr-4 mt-3 px-4 py-2 text-sm font-normal flex gap-1 justify-center items-center rounded-lg duration-100 hover:text-indigo-50 hover:bg-indigo-600 hover:border-indigo-50 ">
+    <button className="text-emerald-50 bg-emerald-700 border-2 border-slate-50 absolute top-0 left-0 ml-32 mt-3 px-3 py-2 text-xs font-light flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-600 hover:text-emerald-50">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
       >
         <path

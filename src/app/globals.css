@@ -9,13 +9,3 @@
   --fg2: #16423c;
   --fg3: #00ab94;
 }
-
-@layer base {
-  h1 {
-    @apply font-poppins font-bold text-xl text-textColor3;
-  }
-
-  input {
-    @apply px-5 py-2 bg-BgColor2 rounded-lg;
-  }
-}
