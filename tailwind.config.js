@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--font-inter)"],
-        inter: ["var(--font-poppins)"],
+        poppins: ["var(--font-poppins)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
         BgColor1: "var(--bg1)",

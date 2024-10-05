@@ -1,6 +1,7 @@
 "use client";
 
 import { generateDestinasi } from "@/action/generateAI";
+import { BtnCari } from "@/components/search/btnSearch";
 import { ListDestinasi } from "@/components/search/listDestinasi";
 import { useActionState } from "react";
 
@@ -23,18 +24,22 @@ export default function SearchDestinasiPage() {
                 className="w-full"
                 placeholder="Cari kota yang akan kamu kunjungi..."
               />
-              <button
+              {/* <button
                 className="border-slate-200 disabled:opacity-20 disabled:cursor-wait"
                 disabled={pending}
               >
                 Search
-              </button>
+              </button> */}
+              <BtnCari pending={pending} />
             </form>
           </div>
 
+          <ListDestinasi />
+          <ListDestinasi />
+
           {/* tampilkan AI  */}
 
-          {state && (
+          {/* {state && (
             <div className="w-full flex flex-col gap-4">
               <p className="text-center">{state.message}</p>
               {state.destinations &&
@@ -42,7 +47,7 @@ export default function SearchDestinasiPage() {
                   <ListDestinasi key={index} {...destinasi} />
                 ))}
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
