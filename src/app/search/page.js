@@ -3,10 +3,20 @@
 import { generateDestinasi } from "@/action/generateAI";
 import { BtnCari } from "@/components/search/btnSearch";
 import { ListDestinasi } from "@/components/search/listDestinasi";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect } from "react";
+import { useSetAtom } from "jotai";
+import { destinasiAtom } from "@/util/jotai";
+import { BtnBookmark } from "@/components/search/btnBookmark";
 
 export default function SearchDestinasiPage() {
   const [state, formAction, pending] = useActionState(generateDestinasi, null);
+  const dataDestinasiAtom = useSetAtom(destinasiAtom);
+
+  useEffect(() => {
+    if (state) {
+      dataDestinasiAtom(state.destinations);
+    }
+  }, [state]);
 
   return (
     <section>
@@ -51,10 +61,23 @@ export default function SearchDestinasiPage() {
               >
                 {state.message}
               </p>
-              {state.destinations &&
-                state.destinations.map((destinasi, index) => (
-                  <ListDestinasi key={index} {...destinasi} />
-                ))}
+              {state.destinations && (
+                <div className="w-full flex flex-col gap-2 border-2 p-2 border-slate-100  ">
+                  <div className="flex justify-between items-center ">
+                    <p className="text-center font-poppins text-lg font-medium text-emerald-800 ">
+                      Berikut 5 destinasi wisata yang wajib di kunjungi
+                    </p>
+                    <BtnBookmark />
+                  </div>
+                  {state.destinations.map((destinasi, index) => (
+                    <ListDestinasi key={index} {...destinasi} />
+                  ))}
+                </div>
+              )}
+
+              {/* // state.destinations.map((destinasi, index) => (
+                //   <ListDestinasi key={index} {...destinasi} />
+                // ))} */}
             </div>
           )}
         </div>

@@ -1,6 +1,9 @@
 export function BtnShare() {
   return (
-    <button className="text-emerald-50 bg-emerald-700 border-2 border-slate-50 absolute top-0 left-0 ml-32 mt-3 px-3 py-2 text-xs font-light flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-600 hover:text-emerald-50">
+    <button
+      className="text-emerald-50 bg-emerald-700 border-2 border-slate-50 absolute top-0 left-0 ml-32 mt-3 px-3 py-2 text-xs font-light flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-600 hover:text-emerald-50"
+      formAction="/search/destinasi"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
