@@ -33,8 +33,7 @@ model Session {
 
 model Destinasi {
   id         Int    @id @default(autoincrement())
-  pic        String
-  name       String
+  name       String @unique
   informasi  String
   address    String
   restaurant String

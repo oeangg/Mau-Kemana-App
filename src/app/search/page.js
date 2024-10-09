@@ -13,7 +13,8 @@ export default function SearchDestinasiPage() {
   const dataDestinasiAtom = useSetAtom(destinasiAtom);
 
   useEffect(() => {
-    if (state) {
+    if (state?.destinations) {
+      // console.log(state.destinations);
       dataDestinasiAtom(state.destinations);
     }
   }, [state]);
