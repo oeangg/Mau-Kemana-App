@@ -6,12 +6,15 @@ export async function AddNewDestinasi(formData) {
   // ambil data dari formdata parse ke bentuk JSON
   const dataDestinasi = JSON.parse(formData.get("destinations"));
 
+  console.log(dataDestinasi);
+
   try {
     const newData = await Promise.all(
       dataDestinasi.map(async (item) => {
         await prisma.destinasi.create({
           data: {
             name: item.name,
+            city: item.city,
             informasi: item.information,
             address: item.address,
             price: item.ticketPrice,

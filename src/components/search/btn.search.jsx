@@ -1,4 +1,4 @@
-export function BtnCari({ pending }) {
+export function BtnSearch({ pending }) {
   return (
     <button
       className="absolute right-0 top-0 mt-[2px] mr-1 text-slate-200 bg-emerald-600 border-2  py-3 px-4 text-base font-normal flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-800  disabled:opacity-20 disabled:cursor-wait "

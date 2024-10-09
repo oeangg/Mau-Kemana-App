@@ -2,10 +2,10 @@
 
 import { useAtomValue } from "jotai";
 import { destinasiAtom } from "@/util/jotai";
-import { AddNewDestinasi } from "@/action/addDestinasi";
+import { AddNewDestinasi } from "@/action/add.destinasi";
 
-export function BtnBookmark() {
-  const destinastions = useAtomValue(destinasiAtom);
+export function BtnSave() {
+  const destinations = useAtomValue(destinasiAtom);
 
   return (
     <form action={AddNewDestinasi}>
@@ -13,7 +13,7 @@ export function BtnBookmark() {
       <input
         type="text"
         name="destinations"
-        defaultValue={JSON.stringify(destinastions)} //wajib diisi default value
+        defaultValue={JSON.stringify(destinations)} //wajib diisi default value
         hidden //hidden aja cm buat nampung data
       />
       <button className=" text-emerald-700 bg-slate-50 border-2 border-emerald-500   px-3 py-2 text-xs font-normal flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-600 hover:text-emerald-50">

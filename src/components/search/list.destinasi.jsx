@@ -10,6 +10,7 @@ const myPic = [
 
 export function ListDestinasi({
   no,
+  city,
   name,
   information,
   address,
@@ -34,7 +35,7 @@ export function ListDestinasi({
       </div>
       <div className=" p-2 space-y-1">
         <h2>
-          <span className="font-bold text-lg">Destinasi : </span> {name}
+          <span className="font-bold text-lg">Destinasi : </span> {name} ,{city}
         </h2>
         <p className="text-base text-justify">
           <span className="font-bold text-lg  ">Informasi : </span>{" "}
