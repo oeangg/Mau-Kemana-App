@@ -16,7 +16,7 @@ export function BtnSave() {
         defaultValue={JSON.stringify(destinations)} //wajib diisi default value
         hidden //hidden aja cm buat nampung data
       />
-      <button className=" text-emerald-700 bg-slate-50 border-2 border-emerald-500   px-3 py-2 text-xs font-normal flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-600 hover:text-emerald-50">
+      <button className="flex items-center justify-center gap-1 rounded-full border-2 border-emerald-500 bg-slate-50 px-3 py-2 text-xs font-normal text-emerald-700 duration-100 hover:bg-emerald-600 hover:text-emerald-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

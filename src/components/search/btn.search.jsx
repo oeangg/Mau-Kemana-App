@@ -1,7 +1,7 @@
 export function BtnSearch({ pending }) {
   return (
     <button
-      className="absolute right-0 top-0 mt-[2px] mr-1 text-slate-200 bg-emerald-600 border-2  py-3 px-4 text-base font-normal flex gap-1 justify-center items-center rounded-full duration-100 hover:bg-emerald-800  disabled:opacity-20 disabled:cursor-wait "
+      className="absolute right-0 top-0 mr-1 mt-[2px] flex items-center justify-center gap-1 rounded-full border-2 bg-emerald-600 px-4 py-3 text-base font-normal text-slate-200 duration-100 hover:bg-emerald-800 disabled:cursor-wait disabled:opacity-20"
       disabled={pending}
     >
       <svg
