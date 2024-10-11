@@ -9,7 +9,7 @@ const myPic = [
   "/udara.jpg",
 ];
 
-export function ListBookmark({ city, name, information }) {
+export function ListBookmark({ id, city, name, information }) {
   let random = Math.floor(Math.random() * myPic.length);
 
   return (
@@ -17,18 +17,24 @@ export function ListBookmark({ city, name, information }) {
       <div className="relative shrink-0">
         <Image
           src={myPic[random]}
+          className=""
           width={300}
           height={300}
           alt="pic maukemana"
-          style={{ height: "100%", width: "100%", objectFit: "cover" }}
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+            opacity: 0.8,
+          }}
         />
-        <div className="absolute bottom-0 left-0 mb-8 ml-5 space-y-1">
-          <p className="text-lg font-bold leading-5 text-slate-50 drop-shadow-lg">
+        <div className="absolute left-0 top-0 ml-5 mt-8 space-y-1">
+          <p className="w-full text-lg font-bold leading-5 text-slate-50 drop-shadow-lg">
             {name}
           </p>
           <p className="text-sm font-light text-slate-50">{city}</p>
         </div>
-        <BtnShare />
+        <BtnShare name={name} city={city} />
       </div>
       <div className="space-y-1 p-3">
         <p className="text-justify text-sm font-light leading-5">

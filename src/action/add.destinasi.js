@@ -10,7 +10,7 @@ export async function AddNewDestinasi(formData) {
 
   try {
     const newData = await Promise.all(
-      dataDestinasi.map(async (item) => {
+      dataDestinasi?.map(async (item) => {
         await prisma.destinasi.create({
           data: {
             name: item.name,
@@ -22,7 +22,7 @@ export async function AddNewDestinasi(formData) {
             userId: "cm209mgy10000ex1aq4w5h9a6", //isi sementara, next harus di ubah, userId diambil dari data user
           },
         });
-      })
+      }),
     );
     if (newData) {
       console.log("data berhasil di tambahkan");

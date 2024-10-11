@@ -1,6 +1,7 @@
 "use client";
 
 import { FindManyDestinasi } from "@/action/find.many.destinasi";
+
 import { ListBookmark } from "@/components/bookmark/list";
 import { useActionState } from "react";
 
@@ -30,10 +31,11 @@ export default function BookmarkPage() {
               />
             </form>
           </div>
-          <div className="flex w-full flex-wrap justify-center gap-3">
+          <div className="flex max-h-screen w-full flex-wrap justify-center gap-3 overflow-scroll">
             {state?.map((item, index) => (
               <ListBookmark
                 key={index}
+                id={item.id}
                 name={item.name}
                 city={item.city}
                 information={item.informasi}

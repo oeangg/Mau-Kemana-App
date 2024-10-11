@@ -1,6 +1,13 @@
-export function BtnShare() {
+export function BtnShare({ name, city }) {
+  function submitShare() {
+    window.open(`/share/?name=${name}&city=${city}`, "_blank");
+  }
+
   return (
-    <button className="absolute bottom-0 right-0 mb-3 mr-5 flex items-center justify-center gap-1 rounded-full border-2 bg-slate-50 px-3 py-2 text-xs font-light text-emerald-700 duration-100 hover:bg-emerald-600 hover:text-emerald-50">
+    <button
+      onClick={submitShare}
+      className="absolute bottom-0 right-0 mb-3 mr-5 flex items-center justify-center gap-1 rounded-full border-2 bg-slate-50 px-3 py-2 text-xs font-light text-emerald-700 duration-100 hover:bg-emerald-600 hover:text-emerald-50"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
