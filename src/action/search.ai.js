@@ -38,7 +38,6 @@ export async function GenerateDestinasibyAI(_prevState, formData) {
     });
 
     const result = JSON.parse(response.choices[0].message.content);
-
     return result;
   } catch (error) {
     console.log(error);

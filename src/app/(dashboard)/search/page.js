@@ -16,7 +16,7 @@ export default function SearchDestinasiPage() {
   const dataDestinasiAtom = useSetAtom(destinasiAtom);
 
   useEffect(() => {
-    if (state?.destinations) {
+    if (state.destinations) {
       dataDestinasiAtom(state.destinations);
     }
   }, [state]);
@@ -66,6 +66,7 @@ export default function SearchDestinasiPage() {
               >
                 {state.message}
               </p>
+
               {state.destinations && (
                 <div className="flex w-full flex-col gap-2 border-2 border-slate-100 p-2">
                   <div className="flex items-center justify-between">

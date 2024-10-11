@@ -1,3 +1,4 @@
+"use client";
 export function BtnShare({ name, city }) {
   function submitShare() {
     window.open(`/share/?name=${name}&city=${city}`, "_blank");

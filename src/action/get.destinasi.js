@@ -1,10 +1,25 @@
 import { prisma } from "@/util/prisma";
 
-export async function GetDestinasibyUser() {
-  const userID = "cm209mgy10000ex1aq4w5h9a6";
+export async function GetDestinasibyUser(userId, query) {
   const getDestinasi = await prisma.destinasi.findMany({
     where: {
-      userId: userID,
+      OR: [
+        {
+          city: {
+            contains: query,
+            mode: "insensitive",
+          },
+        },
+        {
+          name: {
+            contains: query,
+            mode: "insensitive",
+          },
+        },
+      ],
+      AND: {
+        userId: userId,
+      },
     },
   });
 
