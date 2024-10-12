@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --bg1: #d9d9d9;
   --bg2: #e9efec;
   --fg1: #6a9c89;
   --fg2: #16423c;
   --fg3: #00ab94;
+} */
+body {
+  color: var(--bg1);
+  font-family: Poppins, sans-serif;
+  color: var(--fg1);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }

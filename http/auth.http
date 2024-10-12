@@ -1,0 +1,18 @@
+### Register User
+POST http://localhost:3000/api/v1/register
+Content-Type: application/json
+
+{
+    "name": "test1",
+    "email": "test1@gmail.com",
+    "password": "12345"
+}
+
+### Login User
+POST http://localhost:3000/api/v1/login
+Content-Type: application/json
+
+{
+    "email": "test2@gmail.com",
+    "password": "123"
+}
