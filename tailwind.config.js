@@ -8,12 +8,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--font-inter)"],
-        inter: ["var(--font-poppins)"],
+        poppins: ["var(--font-poppins)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
-        background: "var(--bg1)",
-        foreground: "var(--fg1)",
+        BgColor1: "var(--bg1)",
+        BgColor2: "var(--bg2)",
+        textColor1: "var(--fg1)",
+        textColor2: "var(--fg2)",
+        textColor3: "var(--fg3)",
       },
     },
   },

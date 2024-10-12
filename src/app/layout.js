@@ -1,4 +1,5 @@
 import { Inter, Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable}`}>
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>
