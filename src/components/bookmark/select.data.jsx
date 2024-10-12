@@ -12,7 +12,7 @@ export async function SelectBookmark({ query }) {
       {dataDestinasi.map((item, index) => (
         <ListBookmark
           key={index}
-          id={item.id}
+          // id={item.id}
           name={item.name}
           city={item.city}
           information={item.informasi}

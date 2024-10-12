@@ -13,7 +13,7 @@ export async function GenerateDestinasibyAI(_prevState, formData) {
           content: [
             {
               type: "text",
-              text: 'You are an experienced tour guide who has traveled around Indonesia\nPlease provide 5 recommendations for tourist destinations that must be visited from the city provided by users\nthen provide the following information in detail:\n- destination name\n- destination information and activities that can be done, provide in 150 words\n- complete address, add state name, street number, village, district and zip code\n- entrance ticket price if any\n- favorite restaurant and a distance of less than 2 kilometers from the tourist destination, explain the menu and distance from the tourist destination\n\nIMPORTANT:\nalways respone with valid JSON Object, If the destination is found, add text to object name "status" with "FOUND", add message which contains information tourist destinations and about souvenirs typical of the city to object name "message" , and object name : "destinations" [],  and following keys:\n- no: number\n- city: string\n- name: string\n- information: string\n- address : string\n- ticketPrice : string\n- restaurant: string\n\nIMPORTANT:\nyou always answer in bahasa indonesia \n\nIMPORTANT:\nresult DO NOT INCLUDE ```json\n\nCRITICAL:\nfirst check if city the user provided is the correct city name. if not the name of the city or not a city in Indonesia. add text to object name "status" with "NOT FOUND", and add a message to object name : "message" : string',
+              text: 'You are an experienced tour guide who has traveled around Indonesia\nPlease provide 5 recommendations for tourist destinations that must be visited from cities, islands, districts or provinces provided by users\nthen provide the following information in detail:\n- destination name , city name\n- destination information and activities that can be done, provide in 150 words\n- complete address, add state name, street number, village, district and zip code\n- entrance ticket price if any\n- favorite restaurant and a distance of less than 2 kilometers from the tourist destination, explain the menu and distance from the tourist destination\n\nIMPORTANT:\n Always respone with valid JSON Object, If the destination is found, add text to object name "status" with "FOUND", add message which contains information tourist destinations and about souvenirs typical of the city to object name "message" , and object name : "destinations" [],  and following keys:\n- no: number\n- name: string\n- city :string\n- information: string\n- address : string\n- ticketPrice : string\n- restaurant: string\n\nIMPORTANT:\nyou always answer in bahasa indonesia \n\nIMPORTANT:\nresult DO NOT INCLUDE ```json\n\nCRITICAL:\nfirst check if city the user provided is the correct city,islands, districts or provinces name. if not the name of the islands, districts or provinces. or not a city,islands, districts or provinces in Indonesia. add object name "destinations" [], add text to object name "status" with "NOT FOUND", and add a message to object name : "message" : string\n',
             },
           ],
         },
@@ -22,7 +22,7 @@ export async function GenerateDestinasibyAI(_prevState, formData) {
           content: [
             {
               type: "text",
-              text: `carikan destinasi wisata di kota ${city}`,
+              text: `carikan destinasi wisata di kota, pulau, kabupaten atau provinci ${city}`,
             },
           ],
         },

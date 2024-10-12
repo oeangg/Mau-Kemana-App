@@ -16,7 +16,7 @@ export function BtnSearch() {
       params.delete("query");
     }
     router.replace(`${pathName}?${params.toString()}`);
-  }, 200);
+  }, 300);
 
   return (
     <div className="relative flex">

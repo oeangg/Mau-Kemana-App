@@ -3,12 +3,23 @@
 import { useAtomValue } from "jotai";
 import { destinasiAtom } from "@/util/jotai";
 import { AddNewDestinasi } from "@/action/add.destinasi";
+import toast from "react-hot-toast";
 
 export function BtnSave() {
   const destinations = useAtomValue(destinasiAtom);
 
+  async function saveDestinasi() {
+    const newDestinasi = await AddNewDestinasi();
+    if (newDestinasi) {
+      toast.success("Berhasil menambahkan destinasi");
+    } else {
+      toast.error("Gagal menambahkan destinasi");
+    }
+  }
+
+  console.log(destinations);
   return (
-    <form action={AddNewDestinasi}>
+    <form action={saveDestinasi}>
       {/* input untuk passing data dari atom berupa JSON string */}
       <input
         type="text"

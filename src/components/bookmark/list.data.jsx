@@ -9,7 +9,7 @@ const myPic = [
   "/udara.jpg",
 ];
 
-export function ListBookmark({ city, name, information }) {
+export function ListBookmark({  city, name, information }) {
   let random = Math.floor(Math.random() * myPic.length);
 
   return (

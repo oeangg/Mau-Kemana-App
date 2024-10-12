@@ -13,13 +13,14 @@ import {
 
 export function ShareButton({ name, city }) {
   const urlShare = `http://localhost:3000/share/?name=${name}&city=${city}`;
+  const titleShare = `Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `;
   const hasTag = ["maukemana", `${city}`, `${name}`];
 
   return (
     <div className="absolute right-0 top-0 mr-4 mt-14 flex gap-2">
       <FacebookShareButton
         url={urlShare}
-        title={`Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `}
+        title={titleShare}
         hashtags={hasTag.map((tag) => tag)}
       >
         {" "}
@@ -27,7 +28,7 @@ export function ShareButton({ name, city }) {
       </FacebookShareButton>
       <TwitterShareButton
         url={urlShare}
-        title={`Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `}
+        title={titleShare}
         hashtags={hasTag.map((tag) => tag)}
       >
         {" "}
@@ -35,7 +36,7 @@ export function ShareButton({ name, city }) {
       </TwitterShareButton>
       <WhatsappShareButton
         url={urlShare}
-        title={`Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `}
+        title={titleShare}
         hashtags={hasTag.map((tag) => tag)}
       >
         {" "}
@@ -43,7 +44,7 @@ export function ShareButton({ name, city }) {
       </WhatsappShareButton>
       <LinkedinShareButton
         url={urlShare}
-        title={`Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `}
+        title={titleShare}
         hashtags={hasTag.map((tag) => tag)}
       >
         {" "}
