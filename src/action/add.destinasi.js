@@ -4,7 +4,7 @@ import { prisma } from "@/util/prisma";
 
 export async function AddNewDestinasi(formData) {
   // ambil data dari formdata parse ke bentuk JSON
-  const dataDestinasi = JSON.parse(formData.get("destinations"));
+  const dataDestinasi = JSON.parse(formData?.get("destinations"));
 
   console.log(dataDestinasi);
 
@@ -25,6 +25,10 @@ export async function AddNewDestinasi(formData) {
       }),
     );
     if (newData) {
+      // return Response.json(
+      //   { message: "Data berhasil di tambahkan" },
+      //   { status: 201 },
+      // );
       console.log("data berhasil di tambahkan");
     }
   } catch (error) {

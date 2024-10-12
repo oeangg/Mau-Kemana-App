@@ -3,28 +3,22 @@
 import { useAtomValue } from "jotai";
 import { destinasiAtom } from "@/util/jotai";
 import { AddNewDestinasi } from "@/action/add.destinasi";
-import toast from "react-hot-toast";
 
 export function BtnSave() {
   const destinations = useAtomValue(destinasiAtom);
 
-  async function saveDestinasi() {
-    const newDestinasi = await AddNewDestinasi();
-    if (newDestinasi) {
-      toast.success("Berhasil menambahkan destinasi");
-    } else {
-      toast.error("Gagal menambahkan destinasi");
-    }
-  }
-
   console.log(destinations);
+  // function cetakconsol() {
+  //   console.log(destinations);
+  // }
+
   return (
-    <form action={saveDestinasi}>
+    <form action={AddNewDestinasi}>
       {/* input untuk passing data dari atom berupa JSON string */}
       <input
         type="text"
         name="destinations"
-        defaultValue={JSON.stringify(destinations)} //wajib diisi default value
+        defaultValue={JSON.stringify(destinations)}
         hidden //hidden aja cm buat nampung data
       />
       <button className="flex items-center justify-center gap-1 rounded-full border-2 border-emerald-500 bg-slate-50 px-3 py-2 text-xs font-normal text-emerald-700 duration-100 hover:bg-emerald-600 hover:text-emerald-50">

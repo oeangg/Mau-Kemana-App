@@ -7,7 +7,6 @@ import { useActionState, useEffect } from "react";
 import { useSetAtom } from "jotai";
 import { destinasiAtom } from "@/util/jotai";
 import { BtnSave } from "@/components/search/btn.save";
-import toast from "react-hot-toast";
 
 export function FormDestinasiAi() {
   const [state, formAction, pending] = useActionState(
