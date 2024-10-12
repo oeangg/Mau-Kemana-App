@@ -3,8 +3,7 @@ import Slide from "../components/Slide";
 import FotoGerak from "../components/FotoGerak";
 import Hero from "../components/Hero";
 import { ListDestinasi } from "../components/ListDestinasi";
-import { PrismaClient } from "@prisma/client";
-const prisma=new PrismaClient()
+import { prisma } from "@/util/prisma";
 
 export default async function Home() {
 const dataDestinasi = await prisma.destinasi.findMany()
@@ -32,4 +31,3 @@ console.log(dataDestinasi)
     </main>
   );
 }
-
