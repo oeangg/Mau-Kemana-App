@@ -5,7 +5,9 @@ import { prisma } from "@/util/prisma";
 export async function AddNewDestinasi(formData) {
   // ambil data dari formdata parse ke bentuk JSON
   const dataDestinasi = JSON.parse(formData?.get("destinations"));
+  const userID = formData.get("user");
 
+  console.log(userID);
   console.log(dataDestinasi);
 
   try {
@@ -19,7 +21,7 @@ export async function AddNewDestinasi(formData) {
             address: item.address,
             price: item.ticketPrice,
             restaurant: item.restaurant,
-            userId: "cm209mgy10000ex1aq4w5h9a6", //isi sementara, next harus di ubah, userId diambil dari data user
+            userId: userID, //isi sementara, next harus di ubah, userId diambil dari data user
           },
         });
       }),

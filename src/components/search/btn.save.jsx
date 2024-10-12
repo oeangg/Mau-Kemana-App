@@ -1,12 +1,15 @@
 "use client";
 
+import Cookies from "js-cookie";
 import { useAtomValue } from "jotai";
 import { destinasiAtom } from "@/util/jotai";
 import { AddNewDestinasi } from "@/action/add.destinasi";
 
 export function BtnSave() {
   const destinations = useAtomValue(destinasiAtom);
+  const userID = Cookies.get("userID");
 
+  // console.log(userID);
   console.log(destinations);
   // function cetakconsol() {
   //   console.log(destinations);
@@ -19,6 +22,13 @@ export function BtnSave() {
         type="text"
         name="destinations"
         defaultValue={JSON.stringify(destinations)}
+        hidden //hidden aja cm buat nampung data
+      />
+
+      <input
+        type="text"
+        name="user"
+        defaultValue={userID}
         hidden //hidden aja cm buat nampung data
       />
       <button className="flex items-center justify-center gap-1 rounded-full border-2 border-emerald-500 bg-slate-50 px-3 py-2 text-xs font-normal text-emerald-700 duration-100 hover:bg-emerald-600 hover:text-emerald-50">

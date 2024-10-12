@@ -1,6 +1,7 @@
 import { ShareButton } from "@/components/bookmark/btn.share.medsos";
 import { prisma } from "@/util/prisma";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 const myPic = [
   "/curug.jpg",
@@ -12,7 +13,8 @@ const myPic = [
 
 export default async function ShareDestinasiPage({ searchParams }) {
   // console.log(searchParams.id);
-  const userID = "cm209mgy10000ex1aq4w5h9a6";
+
+  const userID = cookies().get("userID")?.value; // "cm209mgy10000ex1aq4w5h9a6";
   const destinasiName = searchParams.name;
   const destinasiCity = searchParams.city;
 
@@ -32,9 +34,9 @@ export default async function ShareDestinasiPage({ searchParams }) {
   });
 
   return (
-    <div className="relative mx-auto mt-20 flex w-full max-w-5xl flex-col">
+    <div className="relative mx-auto flex w-full max-w-5xl flex-col">
       <ShareButton name={destinasiName} city={destinasiCity} />
-      <h1 className="text center mb-3 w-full text-xl font-normal text-emerald-800">
+      <h1 className="text center mb-3 w-full text-xl font-normal text-emerald-600">
         Yuk bagikan destinasi favoritemu ke media social!
       </h1>
       <div className="flex w-full flex-col gap-2 border-2 border-slate-100 bg-emerald-50 font-inter text-base font-light text-emerald-800 sm:flex-row">

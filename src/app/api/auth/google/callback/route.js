@@ -37,7 +37,7 @@ export async function GET(req) {
     });
 
     cookies().set("sessionId", session.id);
-    redirect("/dashboard");
+    redirect("/search");
   }
 
   // if not exist create user
@@ -57,5 +57,5 @@ export async function GET(req) {
   });
 
   cookies().set("sessionId", session.id);
-  redirect("/dashboard");
+  redirect("/search");
 }
