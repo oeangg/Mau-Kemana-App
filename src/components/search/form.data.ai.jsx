@@ -43,6 +43,7 @@ export function FormDestinasiAi() {
             className="w-full rounded-full border-2 border-slate-200 bg-slate-50 px-5 py-3 font-poppins text-lg font-light text-emerald-700 placeholder:text-base focus:outline-none focus:outline-emerald-500"
             placeholder="Cari kota yang akan kamu kunjungi..."
           />
+
           <BtnSearch pending={pending} />
         </form>
 

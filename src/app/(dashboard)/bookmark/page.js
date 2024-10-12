@@ -6,10 +6,10 @@ export default function BookmarkPage({ searchParams }) {
 
   return (
     <section>
-      <div className="mx-auto flex w-full max-w-5xl flex-col justify-center pt-5">
+      <div className="mx-auto flex w-full max-w-5xl flex-col justify-center">
         <div className="flex w-full flex-col items-center justify-center gap-4">
           <div className="w-full space-y-2 text-center">
-            <h1 className="font-poppins text-3xl font-bold text-emerald-600">
+            <h1 className="font-poppins text-xl font-semibold text-slate-500">
               Halaman Bookmark
             </h1>
             <BtnSearch />

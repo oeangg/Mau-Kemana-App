@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { loginWithGoogle } from "@/actions/auth/sign-google";
+import Link from "next/link";
 
 export default function Page() {
   const router = useRouter();
@@ -36,8 +37,11 @@ export default function Page() {
       // Simpan sessionId di cookies
       Cookies.set("sessionId", data.sessionId);
 
+      //simpan cookis UserId
+      Cookies.set("userID", data.userID);
+
       // Redirect ke dashboard
-      router.push("/dashboard");
+      router.push("/search");
     } catch (error) {
       // Tangani error dan tampilkan pesan error
       setErrorMessage("Login failed. Please check your credentials.");
@@ -53,39 +57,74 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: 'url("/assets/1.png")', backgroundSize: "cover", backgroundPosition: "center", filter: "blur" }}>
-      <div className="bg-gray-800 bg-opacity-60 p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center text-white mb-6">LOGIN</h2>
-        {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+    <div
+      className="relative flex min-h-screen items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("/assets/1.png")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "blur",
+      }}
+    >
+      <Link
+        href="/"
+        className="absolute left-0 top-0 ml-12 mt-14 rounded-md border-2 border-slate-400 bg-transparent px-5 py-2 text-slate-200 hover:text-slate-200"
+      >
+        Back to Home
+      </Link>
+      <div className="w-96 rounded-lg bg-gray-800 bg-opacity-60 p-8 shadow-md">
+        <h2 className="mb-6 text-center text-2xl font-bold text-white">
+          LOGIN
+        </h2>
+        {errorMessage && (
+          <p className="text-center text-red-500">{errorMessage}</p>
+        )}
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
-            <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} className="w-full p-2 bg-gray-200 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+            <input
+              type="text"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded border border-gray-300 bg-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
           </div>
           <div>
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="w-full p-2 bg-gray-200 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600" />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full rounded border border-gray-300 bg-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
           </div>
           <div>
             <div className="space-y-4">
-              <button type="submit" className="w-full bg-green-600 text-white font-semibold py-2 rounded hover:bg-green-700">
+              <button
+                type="submit"
+                className="w-full rounded bg-green-600 py-2 font-semibold text-white hover:bg-green-700"
+              >
                 Login
               </button>
-              <button type="submit" className="w-full space-x-4 bg-green-500 text-white font-semibold py-2  rounded hover:bg-green-700" onClick={handleGoogleLogin}>
+              <button
+                type="submit"
+                className="w-full space-x-4 rounded bg-green-500 py-2 font-semibold text-white hover:bg-green-700"
+                onClick={handleGoogleLogin}
+              >
                 Login With Google
               </button>
             </div>
           </div>
         </form>
-        <div className="text-right text-white mt-4">
+        {/* <div className="mt-4 text-right text-white">
           <a href="#" className="text-gray-400 hover:text-gray-300">
             Forgot Password? :(
           </a>
-        </div>
-        <div className="text-center text-white mt-4">
+        </div> */}
+        <div className="mt-4 text-center text-white">
           <p>
             Don&apos;t have an account?{" "}
-            <a href="#" className="text-green-400 hover:underline">
+            <Link href="/register" className="text-green-400 hover:underline">
               Sign up here!
-            </a>
+            </Link>
           </p>
         </div>
       </div>

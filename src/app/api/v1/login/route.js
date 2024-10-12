@@ -51,8 +51,17 @@ export async function POST(req) {
     });
 
     // Kembalikan pesan sukses dan sessionId
-    return new Response(JSON.stringify({ message: "Login Success!", sessionId: session.id }), { status: 200 });
+    return new Response(
+      JSON.stringify({
+        message: "Login Success!",
+        sessionId: session.id,
+        userID: session.userId,
+      }),
+      { status: 200 },
+    );
   } catch (error) {
-    return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+    });
   }
 }

@@ -1,6 +1,6 @@
 import { prisma } from "@/util/prisma";
 
-export async function GetDestinasibyUser(userId, query) {
+export async function GetDestinasibyUser(userID, query) {
   const getDestinasi = await prisma.destinasi.findMany({
     where: {
       OR: [
@@ -18,7 +18,7 @@ export async function GetDestinasibyUser(userId, query) {
         },
       ],
       AND: {
-        userId: userId,
+        userId: userID,
       },
     },
   });
