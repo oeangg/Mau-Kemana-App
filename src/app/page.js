@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Slide from "../components/Slide";
 import FotoGerak from "../components/FotoGerak";
@@ -6,6 +7,10 @@ import { ListDestinasi } from "../components/ListDestinasi";
 import { prisma } from "@/util/prisma";
 
 export default async function Home() {
+
+  const user = await prisma.user.findMany();
+  console.log(user);
+  
 const dataDestinasi = await prisma.destinasi.findMany()
 console.log(dataDestinasi)
 
@@ -31,3 +36,4 @@ console.log(dataDestinasi)
     </main>
   );
 }
+

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db:migrate": "npx prisma migrate dev --name dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,6 +11,20 @@
   },
   "dependencies": {
     "@prisma/client": "^5.20.0",
+
+    "arctic": "^1.9.2",
+    "bcrypt": "^5.1.1",
+    "js-cookie": "^3.0.5",
+   
+    "prisma": "^5.20.0",
+    "react": "19.0.0-rc-2d16326d-20240930",
+    "react-dom": "19.0.0-rc-2d16326d-20240930"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0-canary.176",
+    "postcss": "^8",
+
     "jotai": "^2.10.0",
     "next": "15.0.0-canary.176",
     "openai": "^4.67.1",
@@ -23,11 +38,11 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.11",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.0-canary.176",
+ 
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
+
     "tailwindcss": "^3.4.1"
   }
 }

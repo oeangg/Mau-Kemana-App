@@ -1,3 +1,4 @@
+
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
@@ -24,9 +25,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body className={`${inter.variable} ${poppins.variable}`}>
-        <Toaster position="top-center" />
+    <html lang="en">
+      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+              <Toaster position="top-center" />
         <Navbar />
         {children}
         <Footer />
@@ -34,3 +35,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
