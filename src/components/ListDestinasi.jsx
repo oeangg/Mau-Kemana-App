@@ -13,7 +13,7 @@ export function ListDestinasi({ city, name, information }) {
   return (
     <div className="border-10 flex w-full max-w-72 flex-col gap-2 border-slate-200 bg-slate-50 font-inter text-base font-light text-emerald-800">
       <div className="relative shrink-0">
-        <Image
+        <img
           src={myPic[random]}
           className=""
           width={300}
