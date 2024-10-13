@@ -9,13 +9,13 @@ const myPic = [
   "/udara.jpg",
 ];
 
-export function ListBookmark({  city, name, information }) {
+export function ListBookmark({ city, name, information }) {
   let random = Math.floor(Math.random() * myPic.length);
 
   return (
     <div className="flex w-full max-w-72 flex-col gap-2 border-2 border-slate-100 bg-slate-50 font-inter text-base font-light text-emerald-800">
       <div className="relative shrink-0">
-        <Image
+        <img
           src={myPic[random]}
           className=""
           width={300}

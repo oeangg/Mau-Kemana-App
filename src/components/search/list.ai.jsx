@@ -25,7 +25,7 @@ export function ListDestinasiAi({
         <p className="m-auto text-base font-normal text-slate-500">{no}</p>
       </div>
       <div className="shrink-0 md:w-1/3">
-        <Image
+        <img
           // src={myPic[randomPic]}
           src={myPic[random]}
           width={300}
