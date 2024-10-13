@@ -37,6 +37,7 @@ export async function GET(req) {
     });
 
     cookies().set("sessionId", session.id);
+    cookies().set("userID", session.userId);
     redirect("/search");
   }
 
@@ -57,5 +58,6 @@ export async function GET(req) {
   });
 
   cookies().set("sessionId", session.id);
+  cookies().set("userID", session.userId);
   redirect("/search");
 }
