@@ -14,7 +14,8 @@ import {
 export function ShareButton({ name, city }) {
   // 'https://maukemana.vercel.app/'
 
-  const urlShare = `http://localhost:3000/share/?name=${name}&city=${city}`;
+  // const urlShare = `http://localhost:3000/share/?name=${name}&city=${city}`;
+  const urlShare = `http://maukemana.verccel.app/share/?name=${name}&city=${city}`;
   const titleShare = `Halo gais ada destinasi bagus nih di ${city}, yuk kesini ${name} `;
   const hasTag = ["maukemana", `${city}`, `${name}`];
 

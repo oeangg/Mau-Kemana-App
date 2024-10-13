@@ -41,7 +41,7 @@ export default async function ShareDestinasiPage({ searchParams }) {
       </h1>
       <div className="flex w-full flex-col gap-2 border-2 border-slate-100 bg-emerald-50 font-inter text-base font-light text-emerald-800 sm:flex-row">
         <div className="shrink-0 md:w-1/3">
-          <Image
+          <img
             // src={myPic[randomPic]}
             src={myPic[randomPic]}
             width={300}
