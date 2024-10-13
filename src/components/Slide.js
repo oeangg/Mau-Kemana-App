@@ -49,7 +49,7 @@ function Slide() {
       ></div>
       <div className="absolute bottom-0 left-0 mb-24 ml-24">
         <p className="text-2xl font-bold text-slate-50">
-          "You don’t have to be rich to travel well."
+          You don&quot;t have to be rich to travel well.
         </p>
         <p className="text-xl font-medium text-slate-100">-Eugene Fodor</p>
       </div>
